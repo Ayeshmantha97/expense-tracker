@@ -1,1 +1,37 @@
-<p>signup works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="signUpWithEmail()">
+  <div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-title>Sign up</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="input-field">
+        <input formControlName="fullName" matInput placeholder="Full Name" >
+      </mat-form-field>
+        <mat-form-field class="input-field">
+          <input formControlName="email" matInput placeholder="Email" type="email">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+          <input formControlName="password" matInput placeholder="Password" type="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="login-button" type="submit" [disabled]="loginForm.invalid">Sign up</button>
+        <div class="divider">Or</div>
+        <div class="buttons">
+          <button mat-icon-button color="default" class="google-button">
+            <mat-icon class="icon">google</mat-icon>
+          </button>
+          <button mat-icon-button color="default" class="facebook-button">
+            <mat-icon class="icon">facebook</mat-icon>
+          </button>
+          <button mat-icon-button color="default" class="github-button">
+            <mat-icon class="icon">github</mat-icon>
+          </button>
+          <button mat-icon-button color="default" class="linkedin-button">
+            <mat-icon class="icon">linkedin</mat-icon>
+          </button>
+        </div>
+        <br>
+        <hr>
+        <button mat-raised-button color="warn" class="login-button" routerLink="/security/login">Already have an account</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</form>

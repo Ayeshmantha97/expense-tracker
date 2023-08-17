@@ -1,29 +1,34 @@
+<form [formGroup]="loginForm" (ngSubmit)="signInWithEmail()">
 <div class="login-container">
   <mat-card class="login-card">
-    <mat-card-header class="login-header">
-      <mat-card-title>Login</mat-card-title>
-    </mat-card-header>
+    <mat-card-title>Login</mat-card-title>
     <mat-card-content>
-      <form class="login-form">
-        <mat-form-field appearance="outline" class="input-field">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Enter your email" type="email">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="input-field">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Enter your password" type="password">
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" class="login-button">Login</button>
-      </form>
+      <mat-form-field class="input-field">
+        <input formControlName="email" matInput placeholder="Email" type="email">
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <input formControlName="password" matInput placeholder="Password" type="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="login-button" type="submit">Login</button>
+      <div class="divider">Or</div>
+      <div class="buttons">
+        <button mat-icon-button color="default" class="google-button">
+          <mat-icon class="icon">google</mat-icon>
+        </button>
+        <button mat-icon-button color="default" class="facebook-button">
+          <mat-icon class="icon">facebook</mat-icon>
+        </button>
+        <button mat-icon-button color="default" class="github-button">
+          <mat-icon class="icon">github</mat-icon>
+        </button>
+        <button mat-icon-button color="default" class="linkedin-button">
+          <mat-icon class="icon">linkedin</mat-icon>
+        </button>
+      </div>
+      <br>
+      <hr>
+      <button mat-raised-button color="warn" class="login-button" routerLink="/security/signup">Register</button>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button class="social-login-button">Login with Google</button>
-      <button mat-button class="social-login-button">Login with Facebook</button>
-      <button mat-button class="social-login-button">Login with GitHub</button>
-      <button mat-button class="social-login-button">Login with LinkedIn</button>
-    </mat-card-actions>
   </mat-card>
 </div>
-
+</form>

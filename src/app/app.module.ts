@@ -7,8 +7,12 @@ import { ShareModule } from './modules/share/share.module';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { MainFooterComponent } from './core/main-footer/main-footer.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { environment } from '../environments/environment';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     NotFoundComponent,
@@ -18,9 +22,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     ShareModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule { }

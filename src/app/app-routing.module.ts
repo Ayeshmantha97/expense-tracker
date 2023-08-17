@@ -5,7 +5,7 @@ import {NotFoundComponent} from "./core/not-found/not-found.component";
 const routes: Routes = [
   {path:'',redirectTo:'security/login',pathMatch:'full'},
   { path: 'security', loadChildren: () => import('./modules/security/security.module').then(m => m.SecurityModule) },
-  { path: 'dash', loadChildren: () => import('./modules/dash/dash.module').then(m => m.DashModule) },
+  { path: 'dashboard', loadChildren: () => import('./modules/dash/dash.module').then(m => m.DashModule) },
   {path:'**',component:NotFoundComponent}
 ];
 
